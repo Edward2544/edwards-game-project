@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #2E86FF;
+  --color-primary-hover: #529BFF;
+  --color-primary-deep: #1A65D6;
+}
+
+@layer base {
+  :root {
+    --main-color: #2E86FF;
+    --color-primary: #2E86FF;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0b0f17;
+    color: #f1f5f9;
+    overscroll-behavior-y: contain;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    background-color: rgba(46, 134, 255, 0.35);
+    color: #ffffff;
+  }
+
+  h1, h2, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono, .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Pack reveal card shimmer */
+@keyframes mtaaniCardReveal {
+  0% {
+    opacity: 0;
+    transform: perspective(900px) rotateY(75deg) scale(0.84);
+  }
+  65% {
+    opacity: 1;
+    transform: perspective(900px) rotateY(-6deg) scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(900px) rotateY(0deg) scale(1);
+  }
+}
+
+.animate-card-reveal {
+  animation: mtaaniCardReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(46, 134, 255, 0.28);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(46, 134, 255, 0.55);
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Football Mtaani",
+  "description": "Personal eFootball career-mode universe simulator with Kenyan Sheng & Swahili match commentary, competition organizer, transfer market, tactical board, and multi-season career records.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
